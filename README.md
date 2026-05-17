@@ -16,8 +16,7 @@ A modern, professional portfolio website showcasing my work as an AI/ML Develope
 
 ## 🚀 Live Demo
 
-View the live portfolio at: [Your Portfolio URL](https://nitesh8872.github.io/My-nitesh-portfolio/)
-
+View the live portfolio at: https://nitesh8872.github.io/My-nitesh-portfolio/
 ## 📁 Project Structure
 
 ```
