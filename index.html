@@ -1,0 +1,321 @@
+*<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nitesh Sukhwal — B.Tech CSE (AI) student building full-stack and AI-powered web applications." />
+  <title>Nitesh Sukhwal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>NS</text></svg>" />
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__text">NS</span>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">NS<span class="nav__logo-dot">.</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Hello, I'm</p>
+          <h1 class="hero__title">
+            <span class="hero__title-line">Nitesh Sukhwal</span>
+          </h1>
+          <p class="hero__subtitle">
+            Focused on building scalable products, strong in DSA problem-solving, and exploring AI/ML for real-world applications.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View my work</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-num">150+</span>
+              <span class="hero__stat-label">DSA problems solved</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">2</span>
+              <span class="hero__stat-label">Major projects built</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">2027</span>
+              <span class="hero__stat-label">Graduation year</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__avatar">
+          <div class="hero__avatar-inner">
+            <span class="hero__avatar-initials">NS</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <div class="section__header">
+          <span class="section__tag">01</span>
+          <h2 class="section__title">About me</h2>
+        </div>
+        <div class="about__content">
+          <p class="about__lead">
+            I'm a B.Tech student in Computer Science with a specialization in
+            Artificial Intelligence, and I enjoy building software that feels
+            solid on both the inside and the outside.
+          </p>
+          <p>
+            My work spans from structured backends and REST APIs to interfaces
+            that stay clear on any screen. I spend a lot of time on data
+            structures, competitive programming, and learning how modern AI
+            tools can support real products — not just demos.
+          </p>
+          <ul class="about__facts">
+            <li>
+              <span class="about__fact-label">Location</span>
+              <span>Rajasthan, India</span>
+            </li>
+            <li>
+              <span class="about__fact-label">Education</span>
+              <span>B.Tech CSE (AI), Parul University</span>
+            </li>
+            <li>
+              <span class="about__fact-label">Focus</span>
+              <span>Full-stack &amp; AI development</span>
+            </li>
+            <li>
+              <span class="about__fact-label">Availability</span>
+              <span class="about__availability">Open to internships &amp; roles</span>
+            </li>
+          </ul>
+          <a href="assets/Nitesh-Sukhwal-Resume.pdf" class="btn btn--outline" download>Download résumé</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <span class="section__tag">02</span>
+          <h2 class="section__title">Skills &amp; tools</h2>
+          <p class="section__desc">Technologies I work with day to day.</p>
+        </div>
+        <ul class="skills__grid">
+          <li class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">{ }</span>
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, Responsive Design</p>
+            <div class="skill-card__progress">
+              <div class="skill-card__progress-bar" style="width: 80%"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">⚡</span>
+            <h3>Backend</h3>
+            <p>Node.js, Express.js, REST APIs, JWT Authentication</p>
+            <div class="skill-card__progress">
+              <div class="skill-card__progress-bar" style="width: 85%"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">◆</span>
+            <h3>Database</h3>
+            <p>MongoDB Atlas, MySQL, Data Modeling</p>
+            <div class="skill-card__progress">
+              <div class="skill-card__progress-bar" style="width: 75%"></div>
+            </div>
+          </li>
+          <li class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">↗</span>
+            <h3>Deployment &amp; Tools</h3>
+            <p>Vercel, Render, Git, VS Code, Postman</p>
+            <div class="skill-card__progress">
+              <div class="skill-card__progress-bar" style="width: 90%"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="skills__all">
+          <span class="skills__all-label">All skills</span>
+          <div class="skills__tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>MongoDB</span>
+            <span>MySQL</span>
+            <span>REST APIs</span>
+            <span>JWT</span>
+            <span>Git</span>
+            <span>Vercel</span>
+            <span>Render</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>Data Structures</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">03</span>
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__desc">
+            Production-oriented builds from coursework and personal development.
+          </p>
+        </div>
+        <ul class="projects__grid">
+          <li class="project-card">
+            <div class="project-card__visual project-card__visual--1">
+              <span class="project-card__num">01</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>AI · E-Learning</span>
+                <span>2026</span>
+              </div>
+              <h3 class="project-card__title">NeuralSpark</h3>
+              <p class="project-card__desc">
+                An online learning platform where instructors upload coursework and
+                an AI layer reviews submissions automatically — so feedback arrives
+                faster and stays consistent across large classes.
+              </p>
+              <ul class="project-card__stack">
+                <li>Transformers</li>
+                <li>LLMs</li>
+                <li>Full-stack</li>
+                <li>Cloud</li>
+              </ul>
+              <div class="project-card__links">
+                <span class="project-card__link--muted">Coming Soon</span>
+              </div>
+            </div>
+          </li>
+          <li class="project-card project-card--reverse">
+            <div class="project-card__visual project-card__visual--2">
+              <span class="project-card__num">02</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Full-stack · Dashboard</span>
+                <span>2026</span>
+              </div>
+              <h3 class="project-card__title">Smart Task Management Dashboard</h3>
+              <p class="project-card__desc">
+                A secure task hub with login, calendar views, and analytics so users
+                can plan work in one place. The backend handles CRUD, sessions, and
+                rate limits; the frontend stays responsive on desktop and mobile.
+              </p>
+              <ul class="project-card__stack">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MongoDB Atlas</li>
+                <li>JWT</li>
+                <li>Vercel</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="https://smart-task-dashboard-api.onrender.com" target="_blank" rel="noopener noreferrer" class="project-card__link">Live Demo</a>
+                <a href="https://github.com/Nitesh8872" target="_blank" rel="noopener noreferrer" class="project-card__link">GitHub</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="projects__note">
+          NPTEL Computer Networks certification (IIT Kharagpur) · Fluent in English &amp; Hindi
+        </p>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <div class="section__header">
+          <span class="section__tag">04</span>
+          <h2 class="section__title">Let's work together</h2>
+          <p class="section__desc">
+            Internship, collaboration, or just a conversation — send a message and I'll get back to you.
+          </p>
+        </div>
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form__row">
+            <label class="form__field">
+              <span>Name</span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Your name" />
+            </label>
+            <label class="form__field">
+              <span>Email</span>
+              <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" />
+            </label>
+          </div>
+          <label class="form__field">
+            <span>Message</span>
+            <textarea name="message" rows="5" required placeholder="What would you like to discuss?"></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full">Send message</button>
+          <p class="form__note" id="form-status" role="status"></p>
+        </form>
+        <div class="contact__aside">
+          <p class="contact__email">
+            <span>Email</span>
+            <a href="mailto:sukhwalnitesh1212@gmail.com">sukhwalnitesh1212@gmail.com</a>
+          </p>
+          <p class="contact__phone">
+            <span>Phone</span>
+            <a href="tel:+919828818872">+91 98288 18872</a>
+          </p>
+          <ul class="social">
+            <li>
+              <a href="https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Nitesh8872" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nitesh Sukhwal. Built with care.</p>
+      <a href="#home" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
