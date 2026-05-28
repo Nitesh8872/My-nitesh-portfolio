@@ -23,7 +23,8 @@ Welcome to the repository of my professional portfolio. This website is a showca
 - **Live Portfolio (GitHub Pages):** [nitesh8872.github.io/My-nitesh-portfolio/](https://nitesh8872.github.io/My-nitesh-portfolio/)
 - **Live Portfolio (Custom Domain):** [nitesh-sukhwal.com](https://nitesh-sukhwal.com)
 - **LinkedIn:** [Nitesh Sukhwal](https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/)
-- **LeetCode:** [sukhwalnitesh1212](https://leetcode.com/u/sukhwalnitesh1212/)
+- **LeetCode:** [Sukhwal_Nitesh](https://leetcode.com/u/Sukhwal_Nitesh/)
+- **CodeChef:** [nitesh_44](https://www.codechef.com/users/nitesh_44)
 - **GitHub:** [Nitesh8872](https://github.com/Nitesh8872)
 
 ---
@@ -76,9 +77,9 @@ The design system is fully configurable using CSS Variables defined in the `:roo
 
 ## 💡 Projects Featured
 
-1. **Scout Flow AI (Flagship Project)**
-   - *Description:* An advanced automated recruitment assistant that leverages semantic intelligence for matching profiles and executing recruiter workflows.
-   - *Stack:* FastAPI, MongoDB, Llama 3, Mistral AI, NVIDIA Embeddings.
+1. **TalentSync AI (Flagship Project)**
+   - *Description:* An AI-powered recruitment assistant designed for resume analysis, semantic similarity matching, and simulated recruiter outreach workflows.
+   - *Stack:* FastAPI, MongoDB, LLM APIs, Vector Embeddings.
 2. **Neural Spark**
    - *Description:* AI-driven education platform with an assignment evaluation pipeline delivering immediate grading feedback.
    - *Stack:* Transformers, Node.js, Express.js, MongoDB.
