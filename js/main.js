@@ -79,7 +79,7 @@
 
   /* Scroll reveal */
   const revealEls = document.querySelectorAll(
-    ".section__header, .about__content, .skill-card, .project-card, .contact__form, .contact__aside"
+    ".section__header, .about__content, .skill-card, .project-card, .achievement-card, .contact__form, .contact__aside"
   );
 
   revealEls.forEach((el) => el.classList.add("reveal"));

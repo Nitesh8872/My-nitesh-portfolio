@@ -1,147 +1,116 @@
-# Nitesh Sukhwal | Portfolio
+# Nitesh Sukhwal — AI Backend Engineer
 
-A modern, professional portfolio website showcasing my work as an AI/ML Developer and Full-Stack Engineer. Built with vanilla HTML, CSS, and JavaScript for optimal performance and simplicity.
+Welcome to the repository of my professional portfolio. This website is a showcase of my engineering expertise, focusing on **scalable backend architectures, robust REST APIs, and production-ready AI systems**. Built purely with vanilla HTML5, modern CSS3, and ES6+ JavaScript, it delivers a highly optimized, high-fidelity experience with no external framework overhead.
 
-## 🌟 Features
+---
 
-- **Responsive Design** - Fully responsive layout that works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI/UX** - Clean, minimalist design with smooth animations and transitions
-- **Dark Theme** - Eye-friendly dark mode with accent colors
-- **Loading Animation** - Smooth page loader for better user experience
-- **Interactive Elements** - Hover effects, scroll animations, and micro-interactions
-- **Contact Form** - Functional contact form with validation
-- **Social Links** - Integrated social media profiles (LinkedIn, GitHub)
-- **Project Showcase** - Featured projects with live demo links
-- **Skills Section** - Visual representation of technical skills with progress indicators
+## 🌟 Premium Features
 
-## 🚀 Live Demo
+- **High-Fidelity Glassmorphism:** Clean, modern cards featuring semi-transparent backgrounds, blur filters (`backdrop-filter: blur(16px)`), and thin glowing borders.
+- **Deep Gradient Mesh Glows:** Absolute-positioned radial mesh elements behind sections for seamless color gradients and deep visual layers.
+- **Outfit & Instrument Serif Typography:** Sleek modern font pairings that convey engineering precision and contemporary aesthetics.
+- **Structured Skills Matrix:** Grouped skill categories matching exactly with real-world developer standards (Languages, Backend, Databases, Web, Concepts, Tools).
+- **Achievements & Certifications Showcase:** Dedicated visual showcase for credentials like LeetCode (190+ problems), IBM, HackerRank, and NPTEL (IIT Kharagpur).
+- **Mobile-First Responsiveness:** Flawlessly scales down to small viewports with a custom slide-out navigation overlay.
+- **Intersection Observer Reveal:** Smooth, low-overhead scroll animations targeting individual sections and cards.
 
-View the live portfolio at: https://nitesh8872.github.io/My-nitesh-portfolio/
+---
+
+## 🚀 Live Demo & Profiles
+
+- **Live Portfolio:** [Nitesh Sukhwal Portfolio](https://nitesh-sukhwal.com)
+- **LinkedIn:** [Nitesh Sukhwal](https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/)
+- **LeetCode:** [sukhwalnitesh1212](https://leetcode.com/u/sukhwalnitesh1212/)
+- **GitHub:** [Nitesh8872](https://github.com/Nitesh8872)
+
+---
+
 ## 📁 Project Structure
 
 ```
 My portfolio/
-├── index.html          # Main HTML file
+├── index.html                       # Main HTML5 semantic document
 ├── css/
-│   └── style.css       # Stylesheet with custom CSS
+│   └── style.css                    # Premium stylesheet (Glassmorphic variables, animations)
 ├── js/
-│   └── main.js         # JavaScript for interactivity
+│   └── main.js                      # Core scripting (Scroll reveal, form validations)
 ├── assets/
-│   └── Nitesh-Sukhwal-Resume.pdf  # Resume file
-└── README.md           # Project documentation
+│   └── Nitesh_Sukhwal_resumeFinal.pdf # Latest official engineering resume
+└── README.md                        # Documentation
 ```
 
-## 🛠️ Technologies Used
+---
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom styling with CSS variables, flexbox, and grid
-- **JavaScript (ES6+)** - Vanilla JS for interactivity
-- **Google Fonts** - DM Sans and Instrument Serif typography
-- **SVG Icons** - Inline SVG icons for social media and UI elements
+## 🛠️ Tech Stack & Architecture
 
-## 🎨 Design Features
+- **Core:** Semantic HTML5, Vanilla ES6+ JavaScript
+- **Styling:** Vanilla CSS3 (Custom Grid/Flex systems, Variable-based dark themes, Custom animations)
+- **Fonts:** Outfit (sans-serif), Instrument Serif (serif)
+- **Icons:** Highly responsive inline SVG assets
 
-- Custom CSS variables for easy theming
-- Grain texture overlay for visual depth
-- Gradient backgrounds and glow effects
-- Smooth scroll behavior
-- Intersection Observer for scroll animations
-- Mobile-first responsive design
-- Accessible markup with ARIA labels
+---
 
-## 📱 Responsive Breakpoints
+## 🎨 Aesthetic Customization
 
-- Desktop: > 1100px
-- Tablet: 768px - 1100px
-- Mobile: < 768px
-
-## 🔧 Customization
-
-### Colors
-Edit the CSS variables in `css/style.css`:
+The design system is fully configurable using CSS Variables defined in the `:root` of `css/style.css`:
 
 ```css
 :root {
-  --bg: #0a0a0b;
-  --bg-elevated: #121214;
-  --bg-card: #161618;
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #f4f4f5;
-  --text-muted: #a1a1aa;
-  --accent: #c8f560;
-  --accent-dim: rgba(200, 245, 96, 0.15);
-  --accent-glow: rgba(200, 245, 96, 0.25);
+  --bg: #060607;                       /* Ultra-dark workspace background */
+  --bg-elevated: #0b0b0d;              /* Section card elevations */
+  --bg-card: rgba(20, 20, 22, 0.5);    /* Glassmorphic card base background */
+  --border: rgba(255, 255, 255, 0.06); /* Thin structural border */
+  --accent: #c8f560;                   /* Iconic lime-green signature accent */
+  --accent-dim: rgba(200, 245, 96, 0.1);
+  --accent-glow: rgba(200, 245, 96, 0.18);
+  --glass-bg: rgba(18, 18, 20, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur: blur(16px);
 }
 ```
 
-### Content
-Update the following in `index.html`:
-- Personal information (name, location, education)
-- Skills and proficiency levels
-- Project details and links
-- Contact information
-- Social media links
+---
 
-### Images
-Replace the avatar placeholder with your own photo by updating the `.hero__avatar-inner` CSS or adding an `<img>` tag.
+## 💡 Projects Featured
+
+1. **Scout Flow AI (Flagship Project)**
+   - *Description:* An advanced automated recruitment assistant that leverages semantic intelligence for matching profiles and executing recruiter workflows.
+   - *Stack:* FastAPI, MongoDB, Llama 3, Mistral AI, NVIDIA Embeddings.
+2. **Neural Spark**
+   - *Description:* AI-driven education platform with an assignment evaluation pipeline delivering immediate grading feedback.
+   - *Stack:* Transformers, Node.js, Express.js, MongoDB.
+3. **Smart Task Management Dashboard**
+   - *Description:* Full-stack task workspace with robust JWT user authentication and secure server-side validation.
+   - *Stack:* Node.js, Express.js, MongoDB Atlas, JWT, HTML/CSS.
+
+---
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/Nitesh8872/portfolio.git
    cd portfolio
    ```
 
-2. **Open in browser**
-   Simply open `index.html` in your web browser, or use a local server:
+2. **Run locally:**
+   Simply double-click `index.html` to open it in a browser, or launch a lightweight local server:
    ```bash
-   # Using Python
+   # Python server
    python -m http.server 8000
    
-   # Using Node.js
+   # Node server
    npx serve
    ```
 
-3. **Customize**
-   Edit the HTML, CSS, and JavaScript files to personalize the portfolio.
+---
 
-## 📝 Sections
+## 📧 Contact Information
 
-1. **Hero** - Introduction with name, tagline, and key stats
-2. **About** - Personal background and education
-3. **Skills** - Technical skills with visual progress bars
-4. **Projects** - Featured projects with descriptions and links
-5. **Contact** - Contact form and social media links
-
-## 🔗 Social Links
-
-- **LinkedIn**: [nitesh-sukhwal-3b272230a](https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/)
-- **GitHub**: [Nitesh8872](https://github.com/Nitesh8872)
-
-## 📧 Contact
-
-- **Email**: sukhwalnitesh1212@gmail.com
-- **Phone**: +91 98288 18872
-
-## 🎯 Projects Featured
-
-1. **NeuralSpark** - AI-powered E-Learning platform (Coming Soon)
-2. **Smart Task Management Dashboard** - Full-stack task management system
-   - Live Demo: [smart-task-dashboard-api.onrender.com](https://smart-task-dashboard-api.onrender.com)
-   - GitHub: [Nitesh8872](https://github.com/Nitesh8872)
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 👤 Author
-
-**Nitesh Sukhwal**
-- B.Tech CSE (AI) Student at Parul University
-- AI/ML Developer & Full-Stack Engineer
-- Graduation Year: 2027
+- **Email:** sukhwalnitesh1212@gmail.com
+- **Phone:** +91 98288 18872
+- **Location:** Vadodara, Gujarat, India
 
 ---
 
-Built with ❤️ and code.
+*Built with precision, care, and professional aesthetics.*
