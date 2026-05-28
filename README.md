@@ -1,4 +1,4 @@
-# Nitesh Sukhwal — AI Backend Engineer
+# Nitesh Sukhwal — Full Stack Developer
 
 🔗 **Live Portfolio:** (https://nitesh8872.github.io/My-nitesh-portfolio/)
 
@@ -20,6 +20,7 @@ Welcome to the repository of my professional portfolio. This website is a showca
 
 ## 🚀 Live Demo & Profiles
 
+- **Live Portfolio:** [nitesh8872.github.io/My-nitesh-portfolio/](https://nitesh8872.github.io/My-nitesh-portfolio/)
 - **LinkedIn:** [Nitesh Sukhwal](https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/)
 - **LeetCode:** [Sukhwal_Nitesh](https://leetcode.com/u/Sukhwal_Nitesh/)
 - **CodeChef:** [nitesh_44](https://www.codechef.com/users/nitesh_44)
