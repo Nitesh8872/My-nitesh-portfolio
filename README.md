@@ -1,5 +1,7 @@
 # Nitesh Sukhwal — AI Backend Engineer
 
+🔗 **Live Portfolio:** [nitesh8872.github.io/My-nitesh-portfolio/](https://nitesh8872.github.io/My-nitesh-portfolio/)
+
 Welcome to the repository of my professional portfolio. This website is a showcase of my engineering expertise, focusing on **scalable backend architectures, robust REST APIs, and production-ready AI systems**. Built purely with vanilla HTML5, modern CSS3, and ES6+ JavaScript, it delivers a highly optimized, high-fidelity experience with no external framework overhead.
 
 ---
@@ -18,7 +20,8 @@ Welcome to the repository of my professional portfolio. This website is a showca
 
 ## 🚀 Live Demo & Profiles
 
-- **Live Portfolio:** [Nitesh Sukhwal Portfolio](https://nitesh-sukhwal.com)
+- **Live Portfolio (GitHub Pages):** [nitesh8872.github.io/My-nitesh-portfolio/](https://nitesh8872.github.io/My-nitesh-portfolio/)
+- **Live Portfolio (Custom Domain):** [nitesh-sukhwal.com](https://nitesh-sukhwal.com)
 - **LinkedIn:** [Nitesh Sukhwal](https://www.linkedin.com/in/nitesh-sukhwal-3b272230a/)
 - **LeetCode:** [sukhwalnitesh1212](https://leetcode.com/u/sukhwalnitesh1212/)
 - **GitHub:** [Nitesh8872](https://github.com/Nitesh8872)
