@@ -1,6 +1,7 @@
 (function () {
   "use strict";
 
+  const loader = document.getElementById("loader");
   const header = document.getElementById("header");
   const navToggle = document.getElementById("nav-toggle");
   const navMenu = document.getElementById("nav-menu");
@@ -8,55 +9,59 @@
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
   const yearEl = document.getElementById("year");
-  const loader = document.getElementById("loader");
 
+  // Set current year
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  /* Page loader */
-  window.addEventListener("load", () => {
+  // Loader - Hide after DOM content loads
+  function hideLoader() {
     if (loader) {
       setTimeout(() => {
-        loader.classList.add("loader--hidden");
-      }, 500);
-    }
-  });
-
-  /* Sticky header */
-  function onScroll() {
-    if (window.scrollY > 40) {
-      header.classList.add("header--scrolled");
-    } else {
-      header.classList.remove("header--scrolled");
+        loader.classList.add("hidden");
+      }, 800);
     }
   }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hideLoader);
+  } else {
+    hideLoader();
+  }
+  
+  // Also ensure it hides on window load
+  window.addEventListener("load", hideLoader);
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  /* Mobile nav */
+  // Mobile menu toggle
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", () => {
-      const open = navMenu.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      const isOpen = navMenu.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
       });
     });
   }
 
-  /* Active nav link */
+  // Header scroll effect
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  // Active nav link
   const sections = document.querySelectorAll("section[id]");
 
-  function setActiveLink() {
-    const scrollY = window.scrollY + 120;
+  function setActiveNav() {
+    const scrollY = window.scrollY + 100;
 
     sections.forEach((section) => {
       const id = section.getAttribute("id");
@@ -74,88 +79,176 @@
     });
   }
 
-  window.addEventListener("scroll", setActiveLink, { passive: true });
-  setActiveLink();
+  window.addEventListener("scroll", setActiveNav, { passive: true });
+  setActiveNav();
 
-  /* Scroll reveal */
-  const revealEls = document.querySelectorAll(
-    ".section__header, .about__content, .skill-card, .project-card, .achievement-card, .contact__form, .contact__aside"
+  // Enhanced scroll reveal animations with stagger effect
+  const revealElements = document.querySelectorAll(
+    ".section__header, .about__content, .about__details, .detail-card, " +
+    ".skill-category, .project-card, .achievement-item, .contact__info, .contact__form"
   );
-
-  revealEls.forEach((el) => el.classList.add("reveal"));
 
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add("revealed");
+          }, delay);
           revealObserver.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    }
   );
 
-  revealEls.forEach((el) => revealObserver.observe(el));
+  revealElements.forEach((el, index) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+    // Add stagger delay for grid items
+    if (el.classList.contains("skill-category") || 
+        el.classList.contains("project-card") || 
+        el.classList.contains("achievement-item") ||
+        el.classList.contains("detail-card")) {
+      const gridIndex = Array.from(el.parentElement.children).indexOf(el);
+      el.dataset.delay = `${gridIndex * 100}`;
+    }
+    revealObserver.observe(el);
+  });
 
-  /* Contact form (mailto fallback) */
+  // Contact form handling
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const name = contactForm.querySelector('[name="name"]').value.trim();
-      const email = contactForm.querySelector('[name="email"]').value.trim();
-      const message = contactForm.querySelector('[name="message"]').value.trim();
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+      };
 
-      // Enhanced validation
-      if (!name) {
-        formStatus.textContent = "Please enter your name.";
-        formStatus.className = "form__note error";
-        contactForm.querySelector('[name="name"]').focus();
-        return;
-      }
+      // Show processing state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
 
-      if (!email || !email.includes('@') || !email.includes('.')) {
-        formStatus.textContent = "Please enter a valid email address.";
-        formStatus.className = "form__note error";
-        contactForm.querySelector('[name="email"]').focus();
-        return;
-      }
+      try {
+        // Send email via Formspree or similar service
+        const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+        });
 
-      if (!message || message.length < 10) {
-        formStatus.textContent = "Please enter a message (at least 10 characters).";
-        formStatus.className = "form__note error";
-        contactForm.querySelector('[name="message"]').focus();
-        return;
-      }
-
-      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\n${message}`
-      );
-      const mailto = document.querySelector(".contact__email a");
-      const to = mailto ? mailto.getAttribute("href").replace("mailto:", "") : "";
-
-      if (to && !to.includes("example.com")) {
-        // Add success animation
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        submitBtn.textContent = "Sending…";
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-          window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-          formStatus.textContent = "Opening your email client…";
-          formStatus.className = "form__note success";
-          submitBtn.textContent = "Send message";
-          submitBtn.disabled = false;
-        }, 500);
-      } else {
+        if (response.ok) {
+          formStatus.textContent = "✓ Message sent successfully!";
+          formStatus.classList.add("success");
+          formStatus.classList.remove("error");
+          contactForm.reset();
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
         formStatus.textContent =
-          "Update your email in index.html, then try again.";
-        formStatus.className = "form__note error";
-      }
+          "✗ Failed to send message. Please try again.";
+        formStatus.classList.add("error");
+        formStatus.classList.remove("success");
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
 
-      contactForm.reset();
+        // Clear message after 5 seconds
+        setTimeout(() => {
+          formStatus.textContent = "";
+          formStatus.classList.remove("success", "error");
+        }, 5000);
+      }
     });
   }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href === "#") return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // Add ripple effect to buttons
+  document.querySelectorAll(".btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      const ripple = document.createElement("span");
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+
+      ripple.style.width = ripple.style.height = size + "px";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
+      ripple.classList.add("ripple");
+
+      this.appendChild(ripple);
+
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  // Parallax effect for hero background
+  const heroBg = document.querySelector(".hero__bg");
+  if (heroBg) {
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      const rate = scrolled * 0.3;
+      heroBg.style.transform = `translateY(${rate}px)`;
+    }, { passive: true });
+  }
+
+  // Smooth hover effects for cards
+  const cards = document.querySelectorAll(".skill-category, .project-card, .achievement-item, .detail-card");
+  cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    });
+  });
+
+  // Magnetic effect for buttons
+  const magneticButtons = document.querySelectorAll(".btn");
+  magneticButtons.forEach(btn => {
+    btn.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    
+    btn.addEventListener("mouseleave", () => {
+      btn.style.transform = "translate(0, 0)";
+    });
+  });
 })();

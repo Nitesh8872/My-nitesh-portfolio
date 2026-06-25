@@ -12,7 +12,7 @@ Welcome to the repository of my professional portfolio. This website is a showca
 - **Deep Gradient Mesh Glows:** Absolute-positioned radial mesh elements behind sections for seamless color gradients and deep visual layers.
 - **Outfit & Instrument Serif Typography:** Sleek modern font pairings that convey engineering precision and contemporary aesthetics.
 - **Structured Skills Matrix:** Grouped skill categories matching exactly with real-world developer standards (Languages, Backend, Databases, Web, Concepts, Tools).
-- **Achievements & Certifications Showcase:** Dedicated visual showcase for credentials like LeetCode (190+ problems), IBM, HackerRank, and NPTEL (IIT Kharagpur).
+Achievements & Certifications Showcase: Dedicated visual showcase for credentials like LeetCode (200+ problems), IBM, HackerRank, and NPTEL (IIT Kharagpur).
 - **Mobile-First Responsiveness:** Flawlessly scales down to small viewports with a custom slide-out navigation overlay.
 - **Intersection Observer Reveal:** Smooth, low-overhead scroll animations targeting individual sections and cards.
 
@@ -38,7 +38,7 @@ My portfolio/
 ├── js/
 │   └── main.js                      # Core scripting (Scroll reveal, form validations)
 ├── assets/
-│   └── Nitesh_Sukhwal_resumeFinal.pdf # Latest official engineering resume
+│   └── (static assets such as images and documents)
 └── README.md                        # Documentation
 ```
 
